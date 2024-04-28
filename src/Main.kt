@@ -18,6 +18,7 @@ val qInit00 = listOf("0000", "0001", "0010", "0011", "0100", "0101", "0110", "01
 val qInit01 = listOf("----", "----", "----", "----", "----", "----", "0111", "1000", "1001", "1010", "1011", "1100", "1101", "1110", "1111", "0110")
 val qInit10 = listOf("0000", "0010", "0100", "0110", "1000", "1010", "1100", "1110", "0000", "0010", "0100", "0110", "1000", "1010", "1100", "1110")
 val qInit11 = listOf("----", "----", "----", "----", "----", "----", "----", "----", "----", "----", "----", "----", "----", "----", "----", "----")
+
 val qInit = listOf(qInit00, qInit01, qInit10, qInit11)
 val xt = mutableMapOf<String, Array<Array<String>>>()
 val xr = mutableMapOf<String, Array<Array<String>>>()
@@ -62,12 +63,12 @@ fun createKM() {
     val cList = listOf("000", "001", "011", "010", "110", "111", "101", "100")
     // R
     for (k in 3 downTo 0) {
-        print("Map for R$k\n")
+        print("Map for R${3-k}\n")
         for (i in cList.indices) { // h
             for (j in cList.indices) { // v
                 val curX = cList[j][2].toString() + cList[j][1]
                 val curQI = qToI(cList[j][0].toString() + cList[i].reversed())
-                print(xr[curX]!![curQI][k])
+                print(xr[curX]!![curQI][3-k] + ' ')
             }
             print("\n")
         }
@@ -75,12 +76,12 @@ fun createKM() {
     }
     // S
     for (k in 3 downTo 0) {
-        print("Map for S$k\n")
+        print("Map for S${3-k}\n")
         for (i in cList.indices) { // h
             for (j in cList.indices) { // v
                 val curX = cList[j][2].toString() + cList[j][1]
                 val curQI = qToI(cList[j][0].toString() + cList[i].reversed())
-                print(xs[curX]!![curQI][k])
+                print(xs[curX]!![curQI][3-k] + ' ')
             }
             print("\n")
         }
@@ -88,12 +89,12 @@ fun createKM() {
     }
     // T
     for (k in 3 downTo 0) {
-        print("Map for T$k\n")
+        print("Map for T${3-k}\n")
         for (i in cList.indices) { // h
             for (j in cList.indices) { // v
                 val curX = cList[j][2].toString() + cList[j][1]
                 val curQI = qToI(cList[j][0].toString() + cList[i].reversed())
-                print(xt[curX]!![curQI][k])
+                print(xt[curX]!![curQI][3-k] + ' ')
             }
             print("\n")
         }
@@ -104,6 +105,6 @@ fun createKM() {
 
 fun main() {
     createTable()
-    println("----------------------------")
+    println("-------------------------------")
     createKM()
 }
