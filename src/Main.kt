@@ -68,7 +68,7 @@ fun createKM() {
             for (j in cList.indices) { // v
                 val curX = cList[j][2].toString() + cList[j][1]
                 val curQI = qToI(cList[j][0].toString() + cList[i].reversed())
-                print(xr[curX]!![curQI][3-k] + ' ')
+                print(xr[curX]!![curQI][k] + ' ')
             }
             print("\n")
         }
@@ -81,7 +81,7 @@ fun createKM() {
             for (j in cList.indices) { // v
                 val curX = cList[j][2].toString() + cList[j][1]
                 val curQI = qToI(cList[j][0].toString() + cList[i].reversed())
-                print(xs[curX]!![curQI][3-k] + ' ')
+                print(xs[curX]!![curQI][k] + ' ')
             }
             print("\n")
         }
@@ -94,7 +94,7 @@ fun createKM() {
             for (j in cList.indices) { // v
                 val curX = cList[j][2].toString() + cList[j][1]
                 val curQI = qToI(cList[j][0].toString() + cList[i].reversed())
-                print(xt[curX]!![curQI][3-k] + ' ')
+                print(xt[curX]!![curQI][k] + ' ')
             }
             print("\n")
         }
